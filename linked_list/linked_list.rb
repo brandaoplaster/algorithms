@@ -1,4 +1,8 @@
-class LikedList
+# frozen_string_literal: true
+
+require_relative "../node/node"
+
+class LinkedList
   def initialize
     @elem = nil
   end
@@ -30,7 +34,11 @@ class LikedList
 
   def show
     current = @elem
-    while current.nil?
+    if current.nil?
+      puts "Empty list"
+    end
+
+    while current
       puts current.value
       current = current.next
     end
